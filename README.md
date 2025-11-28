@@ -123,10 +123,7 @@ npm start
 4. **Monitor Progress**: Track voting progress and voter turnout
 5. **View Analytics**: Access comprehensive election results and statistics
 
-### Demo Credentials
-- **Admin Account**: admin@campus.edu / admin123
-- **User Account**: user@campus.edu / user123
-- **Note**: Only @campus.edu emails are accepted in the system
+ 
 
 ## 📁 Project Structure
 
