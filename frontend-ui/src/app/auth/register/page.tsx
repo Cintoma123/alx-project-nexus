@@ -8,6 +8,8 @@ import { registerSchema, type RegisterFormData } from '@/lib/validations/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
+export const dynamic = 'force-dynamic';
+
 export default function RegisterPage() {
   const router = useRouter();
   const { register: registerUser, isAuthenticated, isLoading } = useAuth();

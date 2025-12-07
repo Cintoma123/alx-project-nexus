@@ -8,6 +8,8 @@ import { resetPasswordSchema, type ResetPasswordFormData } from '@/lib/validatio
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
+export const dynamic = 'force-dynamic';
+
 export default function ResetPasswordPage() {
   const router = useRouter();
   const { resetPassword, isAuthenticated, isLoading } = useAuth();

@@ -8,6 +8,8 @@ import { otpSchema, type OtpFormData } from '@/lib/validations/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
+export const dynamic = 'force-dynamic';
+
 export default function VerifyOtpPage() {
   const router = useRouter();
   const searchParams = useSearchParams();

@@ -8,6 +8,8 @@ import { loginSchema, type LoginFormData } from '@/lib/validations/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
+export const dynamic = 'force-dynamic';
+
 export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -192,9 +194,6 @@ export default function LoginPage() {
         <div className="mt-8 bg-blue-50 border border-blue-200 rounded-md p-4">
           <h3 className="text-sm font-medium text-blue-800 mb-2">Demo Credentials</h3>
           <div className="text-xs text-blue-700 space-y-1">
-            <p><strong>Admin:</strong> admin@campus.edu / admin123</p>
-            <p><strong>User:</strong> user@campus.edu / user123</p>
-            <p><strong>Note:</strong> Only @campus.edu emails are accepted</p>
           </div>
         </div>
       </div>
