@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import AdminLayout from '@/components/AdminLayout';
 import { useAuth } from '@/lib/context/AuthProvider';
 
-export default function AdminResultsPage() {
+// Component that uses searchParams - needs to be wrapped in Suspense
+function AdminResultsForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const electionId = searchParams.get('election');
@@ -61,5 +62,20 @@ export default function AdminResultsPage() {
         </div>
       </div>
     </AdminLayout>
+  );
+}
+
+export default function AdminResultsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    }>
+      <AdminResultsForm />
+    </Suspense>
   );
 }
